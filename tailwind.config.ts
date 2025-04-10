@@ -8,9 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1400px'
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primaryGreen: "#10d078",
+        darkGreen: "#0c824c",
+        veryLightGreen: "#cbf4e1",
+        deepBlack: "#121212",
       },
     },
   },
