@@ -1,7 +1,9 @@
 //Components
-import Header from "@/Components/Header";
-import CryptoWidget from "@/Components/PriceMarquee";
-import SolPrices from "@/Components/SolPrices";
+import Header from "@/Components/HomePage/Header";
+import CryptoWidget from "@/Components/HomePage/PriceMarquee";
+import SolPrices from "@/Components/HomePage/SolPrices";
+import Chart from "@/Components/HomePage/Chart";
+import Form from "@/Components/HomePage/Form";
 
 
 const page = () => {
@@ -10,6 +12,8 @@ const page = () => {
       <Header />
       <CryptoWidget />
       <SolPrices />
+      <Chart />
+      <Form />
     </main>
   );
 }

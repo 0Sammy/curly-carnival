@@ -3,6 +3,7 @@ import { Raleway } from 'next/font/google';
 
 //Toast Provider
 import ToastProvider from "@/providers/Toast";
+import Connector from "@/providers/Web3Provider";
 
 //Styles
 import "./styles/globals.css";
@@ -25,11 +26,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.variable} text-sm md:text-base xl:text-lg min-w-min min-h-dvh font-raleway bg-white text-deepBlack antialiased`}>
-        <ToastProvider>
-          <DesktopBlockNotice />
-          {children}
-        </ToastProvider>
+      <body className={`${raleway.variable} text-sm md:text-base xl:text-lg min-w-min min-h-dvh font-raleway bg-white text-deepBlack antialiased`} suppressHydrationWarning>
+        <Connector>
+          <ToastProvider>
+            <DesktopBlockNotice />
+            {children}
+          </ToastProvider>
+        </Connector>
       </body>
     </html>
   );

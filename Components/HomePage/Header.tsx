@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 //Images
-import logo from "../public/logo.png";
+import logo from "../../public/logo.png";
 
-//Icons
-import { HambergerMenu } from "iconsax-react";
+//Components
+import ConnectWallet from "./ConnectButton";
 
 const Header = () => {
     return (
@@ -13,7 +13,7 @@ const Header = () => {
                 <Image src={logo} alt="logo" className="w-10" />
                 <h1 className="font-medium text-lg md:text-xl xl:text-2xl"><span className="font-semibold">MINEREUM</span> BSC</h1>
             </div>
-            <HambergerMenu className="cursor-pointer" size={28} />
+            <ConnectWallet />
         </main>
     );
 }
