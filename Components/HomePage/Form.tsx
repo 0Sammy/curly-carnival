@@ -1,14 +1,19 @@
 "use client"
 
+import { useAccount } from "wagmi"; 
+import { useRouter } from "next/navigation";
+
 //Stores
 import { useFormStore } from "@/stores/formStore";
+import { toast } from "react-fox-toast";
 
 
 const Form = () => {
 
-
     //States
-    const { setField } = useFormStore();
+    const router = useRouter();
+    const { isConnected } = useAccount();
+    const { setField, email, level, quantity, airdrop, network, address } = useFormStore();
 
     const styles = "bg-inherit px-2 xl:px-4 py-3 border border-[#716A7C] focus:border-0 rounded-lg focus:outline focus:outline-primaryGreen placeholder:text-[#A7A1AF] duration-300";
 
@@ -16,6 +21,20 @@ const Form = () => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setField(event.target.name as keyof Omit<FormState, 'setField'>, event.target.value);
     };
+
+    const handleSubmission = () => {
+        if (!isConnected) {
+            toast.info("Kindly connect your wallet to continue. Kindly click on the connect button at the top right.");
+            return;
+        }
+        if(!email || !level || !quantity || !airdrop || !network || !address){
+            toast.error("Kindly fill the entire form");
+            return;
+        }
+        toast.success("Your response was taken successfully.");
+        toast.info("Redirecting...");
+        router.push("/exchange");
+    }
 
 
     return (
@@ -29,11 +48,11 @@ const Form = () => {
             <section className="flex flex-col gap-y-5 mt-4">
                 <div className="flex flex-col">
                     <label className="text-darkGreen" htmlFor="email">Email Address</label>
-                    <input onChange={handleChange} type="email" name="email" id="email" placeholder="Johndoe@gmail.com" className={`${styles}`} />
+                    <input value={email} onChange={handleChange} type="email" name="email" id="email" placeholder="Johndoe@gmail.com" className={`${styles}`} />
                 </div>
                 <div className="flex flex-col">
                     <label className="text-darkGreen" htmlFor="level">Blockchain Liquidity Level</label>
-                    <select onChange={handleChange} name="level" id="level" className={`${styles} cursor-pointer`}>
+                    <select value={level} onChange={handleChange} name="level" id="level" className={`${styles} cursor-pointer`}>
                         <option value="">Liquidity Level</option>
                         <option value="variation 1">Variation 1</option>
                         <option value="variation 2">Variation 2</option>
@@ -42,7 +61,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col">
                     <label className="text-darkGreen" htmlFor="quantity">Airdrop Quantity</label>
-                    <select onChange={handleChange} name="quantity" id="quantity" className={`${styles} cursor-pointer`}>
+                    <select value={quantity} onChange={handleChange} name="quantity" id="quantity" className={`${styles} cursor-pointer`}>
                         <option value="">Airdrop Quantity</option>
                         <option value="50,000 mneb">50,000 MNEB</option>
                         <option value="100,000 mneb">100,000 MNEB</option>
@@ -51,7 +70,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col">
                     <label className="text-darkGreen" htmlFor="airdrop">Mining Airdrop Wallet</label>
-                    <select onChange={handleChange} name="airdrop" id="airdrop" className={`${styles} cursor-pointer`}>
+                    <select value={airdrop} onChange={handleChange} name="airdrop" id="airdrop" className={`${styles} cursor-pointer`}>
                         <option value="">Select Wallet</option>
                         <option value="trust wallet">Trust Wallet</option>
                         <option value="metamask">Metamask</option>
@@ -61,7 +80,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col">
                     <label className="text-darkGreen" htmlFor="network">Minereum Network</label>
-                    <select onChange={handleChange} name="network" id="network" className={`${styles} cursor-pointer`}>
+                    <select value={network} onChange={handleChange} name="network" id="network" className={`${styles} cursor-pointer`}>
                         <option value="">Select Network</option>
                         <option value="polygon">Polygon</option>
                         <option value="ethereum">Ethereum</option>
@@ -70,8 +89,11 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col">
                     <label className="text-darkGreen" htmlFor="address">Minereum Wallet Address</label>
-                    <input onChange={handleChange} type="text" name="address" id="address" placeholder="Mx123abCDef456GHiJkl789mNoPqRstUvWyZ0" className={`${styles}`} />
+                    <input value={address} onChange={handleChange} type="text" name="address" id="address" placeholder="Mx123abCDef456GHiJkl789mNoPqRstUvWyZ0" className={`${styles}`} />
                 </div>
+                <button onClick={handleSubmission} className="bg-primaryGreen shadow-veryLightGreen hover:shadow-none py-3 rounded-lg w-full text-deepBlack text-center transition-all duration-300 squeezeBTn">
+                    SQUEEZE ME IN
+                </button>
             </section>
         </main>
     );
