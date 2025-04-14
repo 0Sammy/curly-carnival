@@ -11,7 +11,7 @@ import Drawer from "../HomePage/Drawer";
 import Loading from "./Loading";
 
 //Icons and Images
-import caution from "../../public/caution.jpg";
+import caution from "../../public/caution.png";
 import { ArrowSwapVertical, Lock, Unlock, Lock1, InfoCircle } from "iconsax-react";
 
 const Exchange = () => {

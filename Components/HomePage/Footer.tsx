@@ -6,7 +6,7 @@ import facebook from "../../public/facebook.svg";
 import instagram from "../../public/instagram.svg";
 import tiktok from "../../public/tiktok.svg";
 import telegram from "../../public/telegram.svg";
-import info from "../../public/info.jpg";
+import info from "../../public/info.png";
 
 //Icons
 import { Copyright } from "iconsax-react";
