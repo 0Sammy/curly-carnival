@@ -1,30 +1,26 @@
 "use client"
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { toast } from "react-fox-toast";
-
-//Icons
 import { ArrowLeft2, Clock } from "iconsax-react";
 
-const Page = () => {
-    
-    const router = useRouter()
-    const searchParams = useSearchParams()
-
-    const shouldRedirect = searchParams.get("redirect") === "true"
+function ProcessingContent() {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const shouldRedirect = searchParams.get("redirect") === "true";
 
     useEffect(() => {
-        if (!shouldRedirect) return
+        if (!shouldRedirect) return;
 
         const timer = setTimeout(() => {
-            toast.info("Redirecting...")
-            router.push("/exchange")
-        }, 60000)
+            toast.info("Redirecting...");
+            router.push("/exchange");
+        }, 60000);
 
-        return () => clearTimeout(timer)
-    }, [shouldRedirect])
+        return () => clearTimeout(timer);
+    }, [shouldRedirect]);
 
     return (
         <main>
@@ -41,13 +37,23 @@ const Page = () => {
                 </p>
                 <p>
                     Contact Minereum support team via{" "}
-                    <Link className="font-semibold text-darkGreen underline" href="https://t.me/MinereumAirdropOfficial" target="_blank">
+                    <Link
+                        className="font-semibold text-darkGreen underline"
+                        href="https://t.me/MinereumAirdropOfficial"
+                        target="_blank"
+                    >
                         Telegram
                     </Link>
                 </p>
             </div>
         </main>
-    )
+    );
 }
 
-export default Page
+export default function Page() {
+    return (
+        <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+            <ProcessingContent />
+        </Suspense>
+    );
+}
