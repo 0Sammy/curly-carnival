@@ -6,15 +6,16 @@ import facebook from "../../public/facebook.svg";
 import instagram from "../../public/instagram.svg";
 import tiktok from "../../public/tiktok.svg";
 import telegram from "../../public/telegram.svg";
+import info from "../../public/info.jpg";
 
 //Icons
-import { InfoCircle, Copyright } from "iconsax-react";
+import { Copyright } from "iconsax-react";
 
 const Footer = () => {
     return (
-        <main className="bg-gray-800 p-2 text-white">
+        <main className="bg-gray-600 p-2 text-white">
             <div className="flex items-center gap-x-1 mt-4">
-                <InfoCircle size={18} />
+                <Image src={info} className="size-6" alt="Info Icon" />
                 <p className="font-semibold text-sm sm:text-base">About</p>
             </div>
             <p className="mt-4 text-xs sm:text-sm">
@@ -22,7 +23,7 @@ const Footer = () => {
                 Launched in June, 2021, it allows users to mine without the need of any mining equipment. Similar to the first version of Minereum (MNE) launched in 2017 on the ETH chain. <br />
                 It also includes other features like incorporated DEX capabilities for MNEB, Genesis Addresses and Fee Shares. It also includes the Lucky Draw experiment which brings a new mechanism to generate safe random numbers on the blockchain.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-5 bg-[#F0F0F0] mt-4 p-3">
+            <div className="flex flex-wrap gap-x-5 mt-4">
                 <Link target="_blank" href="https://t.me/MinereumAirdropOfficial">
                     <Image className="size-6" src={telegram} alt="Telegram Icon" />
                 </Link>

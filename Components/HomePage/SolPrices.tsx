@@ -5,27 +5,25 @@ import Link from "next/link";
 import bodyImage from "../../public/sol.png";
 
 //Icons
-import { Solana, BinanceCoin, Facebook } from "iconsax-react";
+import { BinanceCoin, Facebook } from "iconsax-react";
 
 const SolPrices = () => {
     return (
-        <div className="relative h-[30rem]">
+        <div className="relative h-[18rem]">
             <Image src={bodyImage} alt="Sol Image" className="w-full h-full" />
-            <div className="top-0 absolute place-content-center grid bg-black/80 w-full h-[4.2rem] text-white">
-                <h1 className="font-semibold text-base sm:text-lg">LADA/SOL <span className="mx-1">&gt;&gt;</span> MNEB/BNB</h1>
+            <div className="top-0 absolute place-content-center grid bg-primaryGreen w-full h-[4.2rem] text-white">
+                <h1 className="font-semibold text-base sm:text-lg">MNEB/BNB</h1>
                 <div className="flex items-center gap-x-3 mt-0.5 font-medium text-gray-200 text-base sm:text-lg">
-                    <h1 className="flex items-center gap-x-1"><Solana color="#DC1FFF" /> Solana</h1>
-                    <span>&gt;</span>
                     <h1 className="flex items-center gap-x-1"><BinanceCoin color="#F3BA2F" /> BNB</h1></div>
             </div>
-            <div className="bottom-2 left-1/2 absolute grid grid-cols-2 bg-black/80 rounded-xl w-[90%] h-12 font-semibold text-white text-base sm:text-lg -translate-x-1/2">
-                <Link href="" className="flex justify-center items-center gap-x-1 border-r border-black">
-                    <Facebook color="#1877F2" variant="Bold" /> Facebook
+            <div className="bottom-2 left-1/2 absolute grid grid-cols-2 bg-primaryGreen rounded-xl w-[90%] h-10 font-semibold text-white text-base sm:text-lg -translate-x-1/2">
+                <Link href="https://www.facebook.com/profile.php?id=61561124896805" className="flex justify-center items-center gap-x-1 border-white border-r">
+                    <Facebook color="#FFF" variant="Bold" /> Facebook
                 </Link>
-                <Link href="" className="flex justify-center items-center gap-x-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 240 240" fill="none">
-                        <circle cx="120" cy="120" r="120" fill="#0088cc" />
-                        <path d="M179.112 73.7376L160.478 166.754C158.861 174.522 154.494 176.24 147.95 172.37L108.862 143.792L89.5565 162.179C87.7852 163.902 86.3108 165.378 83.2091 165.378L86.1538 124.319L154.401 82.2487C157.393 80.4083 154.001 79.0328 150.553 80.8729L71.3579 121.002L31.6448 108.3C24.0222 105.927 24.0222 100.217 32.6249 96.3406L172.026 40.8359C178.272 38.2655 183.842 42.2293 179.112 73.7376Z" fill="white" />
+                <Link href="https://t.me/MinereumAirdropOfficial" className="flex justify-center items-center gap-x-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256"
+                       style={{fill: "#FFFFFF"}}>
+                        <g fill="#ffffff" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{mixBlendMode: "normal"}}><g transform="scale(4,4)"><path d="M32,10c12.15,0 22,9.85 22,22c0,12.15 -9.85,22 -22,22c-12.15,0 -22,-9.85 -22,-22c0,-12.15 9.85,-22 22,-22zM39.589,40.968c0.404,-1.241 2.301,-13.615 2.534,-16.054c0.071,-0.738 -0.163,-1.229 -0.619,-1.449c-0.553,-0.265 -1.371,-0.133 -2.322,0.21c-1.303,0.47 -17.958,7.541 -18.92,7.951c-0.912,0.388 -1.775,0.81 -1.775,1.423c0,0.431 0.256,0.673 0.96,0.924c0.732,0.261 2.577,0.82 3.668,1.121c1.05,0.29 2.243,0.038 2.913,-0.378c0.709,-0.441 8.901,-5.921 9.488,-6.402c0.587,-0.48 1.056,0.135 0.576,0.616c-0.48,0.48 -6.102,5.937 -6.844,6.693c-0.901,0.917 -0.262,1.868 0.343,2.249c0.689,0.435 5.649,3.761 6.396,4.295c0.747,0.534 1.504,0.776 2.198,0.776c0.694,-0.001 1.059,-0.915 1.404,-1.975z"></path></g></g>
                     </svg>
                     Telegram
                 </Link>

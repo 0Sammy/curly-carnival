@@ -8,7 +8,7 @@ import ConnectWallet from "./ConnectButton";
 
 const Header = () => {
     return (
-        <main className="flex justify-between items-center bg-black/80 px-4 sm:px-6 py-4 text-white">
+        <main className="flex justify-between items-center bg-white px-4 sm:px-6 py-4 border-primaryGreen border-b text-deepBlack">
             <div className="flex items-center gap-x-2">
                 <Image src={logo} alt="logo" className="w-10" />
                 <h1 className="font-medium text-lg md:text-xl xl:text-2xl"><span className="font-semibold">MINEREUM</span> BSC</h1>

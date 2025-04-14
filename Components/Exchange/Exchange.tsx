@@ -3,14 +3,16 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-fox-toast";
+import Image from "next/image";
 
 //Components and Stores
 import { useFormStore } from "@/stores/formStore";
 import Drawer from "../HomePage/Drawer";
 import Loading from "./Loading";
 
-//Icons
-import { ArrowSwapVertical, Lock, Warning2, Unlock, Lock1, InfoCircle } from "iconsax-react";
+//Icons and Images
+import caution from "../../public/caution.jpg";
+import { ArrowSwapVertical, Lock, Unlock, Lock1, InfoCircle } from "iconsax-react";
 
 const Exchange = () => {
 
@@ -90,7 +92,7 @@ const Exchange = () => {
                 </div>
                 <p className="text-gray-400 text-xs sm:text-sm">Binance coin (BSC)</p>
             </div>
-            <p className="mt-2 px-4 sm:px-6 py-4"><Warning2 variant="Bold" className="inline mr-1 text-red-600" size={24} />BNB on BNB chain network only. BNB sent via other networks cannot be processed or recovered.</p>
+            <p className="mt-2 px-4 sm:px-6 py-4"><Image src={caution} alt="Caution Icon" className="inline mr-1 size-7" />BNB on BNB chain network only. BNB sent via other networks cannot be processed or recovered.</p>
             <div className="mt-10">
                 <section className="bg-[#F0F0F0] px-4 sm:px-6 py-4">
                     <button onClick={toggleOpen} className="flex items-center gap-x-1 mt-4 mb-8 font-semibold text-darkGreen">

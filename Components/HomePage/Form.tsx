@@ -97,7 +97,7 @@ const Form = () => {
                     <input value={address} onChange={handleChange} type="text" name="address" id="address" placeholder="Mx123abCDef456GHiJkl789mNoPqRstUvWyZ0" className={`${styles}`} required />
                 </div>
                 <button onClick={handleSubmission} className="bg-primaryGreen shadow-veryLightGreen hover:shadow-none py-3 rounded-lg w-full text-deepBlack text-center transition-all duration-300 squeezeBTn">
-                    SQUEEZE ME IN
+                    NEXT
                 </button>
             </section>
         </main>
