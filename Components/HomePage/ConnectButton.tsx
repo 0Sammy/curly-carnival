@@ -11,7 +11,7 @@ function Account() {
 
     return (
         <div>
-            <div className='relative bg-primaryGreen px-4 py-2 rounded-md text-deepBlack text-xs'>Connected</div>
+            <div className='relative bg-primaryGreen px-4 py-1 rounded-3xl text-deepBlack text-xs'>Connected</div>
         </div>
     )
 }
@@ -33,13 +33,14 @@ function WalletOptions({ onSelect, isOpen }: { onSelect: () => void, isOpen: boo
     return (
         <Drawer isOpen={isOpen} onClose={onSelect}>
             <div className=''>
+                <p className='my-4 font-semibold text-white text-xl sm:text-2xl text-center'>Connect Wallet</p>
                 {connectors.map((connector) => (
                     <button key={connector.uid}
                         onClick={() => {
                             connect({ connector })
                             onSelect()
-                        }} className="flex items-center gap-2 bg-primaryGreen hover:bg-darkGreen my-4 py-2 pl-12 rounded-md w-full text-deepBlack hover:text-white duration-300">
-                        <Image src={getLogo(connector.name)} alt={connector.name} width={52} height={52} />
+                        }} className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 my-4 py-2 pl-4 rounded-md w-full text-[#F0F0F0] hover:text-white duration-300">
+                        <Image src={getLogo(connector.name)} alt={connector.name} width={60} height={60} className="bg-[#F0F0F0] p-2 rounded-xl" />
                         <span>{connector.name}</span>
                     </button>
                 ))}

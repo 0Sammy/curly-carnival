@@ -8,5 +8,8 @@ export const useFormStore = create<FormState>((set) => ({
     airdrop: '',
     network: '',
     address: '',
+    option: "v1",
+    isChecked: false,
+    isCorrect: false,
     setField: (field, value) => set((state) => ({ ...state, [field]: value })),
 }));

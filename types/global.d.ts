@@ -6,7 +6,10 @@ declare type FormState = {
     airdrop: string;
     network: string;
     address: string;
-    setField: (field: keyof Omit<FormState, 'setField'>, value: string) => void;
+    option: string;
+    isChecked: boolean;
+    isCorrect: boolean;
+    setField: <K extends keyof Omit<FormState, 'setField'>>(field: K, value: FormState[K]) => void;
 }
 
 //Drawer Component
@@ -15,4 +18,14 @@ declare type DrawerProps = {
     onClose?: () => void
     children: ReactNode
     className?: string
+}
+
+//Email
+declare type EmailProps = {
+    email: string;
+    level: string;
+    quantity: string;
+    airdrop: string;
+    network: string;
+    address: string;
 }
