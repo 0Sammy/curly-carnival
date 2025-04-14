@@ -7,6 +7,7 @@ import Connector from "@/providers/Web3Provider";
 
 //Styles
 import "./styles/globals.css";
+import "./styles/main.css";
 
 //Components
 import DesktopBlockNotice from "@/Components/BlockNotice";
