@@ -1,6 +1,6 @@
 const CryptoWidget = () => {
   return (
-    <div style={{
+    <div className="z-[5] fixed" style={{
       height: '50px',
       backgroundColor: '#FFFFFF',
       overflow: 'hidden',

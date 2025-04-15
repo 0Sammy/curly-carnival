@@ -92,7 +92,7 @@ const Exchange = () => {
                 </div>
                 <p className="text-gray-400 text-xs sm:text-sm">Binance coin (BSC)</p>
             </div>
-            <p className="mt-2 px-4 sm:px-6 py-4"><Image src={caution} alt="Caution Icon" className="inline mr-1 size-7" />BNB on BNB chain network only. BNB sent via other networks cannot be processed or recovered.</p>
+            <p className="mt-2 px-4 sm:px-6 py-4"><Image src={caution} alt="Caution Icon" className="inline mr-1 size-5" />BNB on BNB chain network only. BNB sent via other networks cannot be processed or recovered.</p>
             <div className="mt-10">
                 <section className="bg-[#F0F0F0] px-4 sm:px-6 py-4">
                     <button onClick={toggleOpen} className="flex items-center gap-x-1 mt-4 mb-8 font-semibold text-darkGreen">
@@ -122,7 +122,7 @@ const Exchange = () => {
                         <input type="checkbox" name="check" id="check" onChange={(event) => setField("isChecked", event.target.checked)} className="size-5" checked={isChecked} />
                         <label htmlFor="check" className="cursor-pointer">I agree to the Terms of Use, Privacy Policy.</label>
                     </div>
-                    <button onClick={() => router.push("/payment")} disabled={!isChecked && !isCorrect} className={`${isChecked && isCorrect ? "bg-primaryGreen hover:bg-darkGreen duration-300 hover:text-white" : "bg-veryLightGreen"} mt-4 font-medium disabled:cursor-not-allowed w-full py-3 rounded-3xl`}>Next Step</button>
+                    <button onClick={() => router.push("/payment")} disabled={!isChecked && !isCorrect} className={`${isChecked && isCorrect ? "bg-primaryGreen hover:bg-darkGreen duration-300 hover:text-white" : "bg-green-300"} mt-4 font-medium disabled:cursor-not-allowed w-full py-3 rounded-3xl`}>Next Step</button>
                 </section>
             </div>
         </main>

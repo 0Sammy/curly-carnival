@@ -12,7 +12,9 @@ const page = () => {
   return (
     <main>
       <Header />
-      <CryptoWidget />
+      <div className="mt-[4.65rem]">
+        <CryptoWidget />
+      </div>
       <SolPrices />
       <Chart />
       <Form />
