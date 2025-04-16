@@ -12,10 +12,12 @@ const page = () => {
   return (
     <main>
       <Header />
-      <div className="mt-[4.65rem]">
+      <div className="top-0 z-[2] fixed mt-[4.65rem] w-full">
         <CryptoWidget />
       </div>
-      <SolPrices />
+      <div className="mt-[10rem]">
+        <SolPrices />
+      </div>
       <Chart />
       <Form />
       <StarRating />

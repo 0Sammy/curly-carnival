@@ -36,11 +36,11 @@ const Page = () => {
                 <p className="font-semibold text-xl sm:text-2xl">Deposit</p>
             </div>
             <div className="bg-[#F0F0F0] mx-auto mt-4 px-4 py-2 border border-gray-200 rounded-md w-[90%]">
-                <p className="font-semibold text-base sm:text-lg">BNB CHAIN</p>
+                <p className="font-semibold text-base sm:text-lg">BNB</p>
             </div>
             <p className="mt-6 ml-4 font-semibold text-darkGreen text-xs sm:text-sm">Network</p>
             <div className="bg-[#F0F0F0] mx-auto mt-2 px-4 py-2 border border-gray-200 rounded-md w-[90%]">
-                <p className="font-semibold text-base sm:text-lg">BNB</p>
+                <p className="font-semibold text-base sm:text-lg">BNB SMARTCHAIN</p>
             </div>
             <p className="mt-6 ml-4 font-semibold text-darkGreen text-xs sm:text-sm">Deposit address</p>
             <Image src={wallet} alt="Wallet Image" className="mx-auto size-48" />

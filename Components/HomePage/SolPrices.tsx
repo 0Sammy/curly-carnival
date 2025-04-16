@@ -11,7 +11,7 @@ const SolPrices = () => {
     return (
         <div className="relative h-[18rem]">
             <Image src={bodyImage} alt="Sol Image" className="w-full h-full" />
-            <div className="top-0 absolute place-content-center grid bg-primaryGreen mt-12 w-full h-[4.2rem] text-white">
+            <div className="top-0 absolute place-content-center grid bg-primaryGreen w-full h-[4.2rem] text-white">
                 <h1 className="font-semibold text-base sm:text-lg">MNEB/BNB</h1>
                 <div className="flex items-center gap-x-3 mt-0.5 font-medium text-gray-200 text-base sm:text-lg">
                     <h1 className="flex items-center gap-x-1"><BinanceCoin color="#F3BA2F" /> BNB</h1></div>

@@ -12,6 +12,8 @@ import Loading from "./Loading";
 
 //Icons and Images
 import caution from "../../public/caution.png";
+import mbsc from "../../public/mbsc.png";
+import bnb from "../../public/bnb.png";
 import { ArrowSwapVertical, Lock, Unlock, Lock1, InfoCircle } from "iconsax-react";
 
 const Exchange = () => {
@@ -70,7 +72,7 @@ const Exchange = () => {
                     Apply
                 </button>
             </Drawer>
-            <div className="grid grid-cols-4 bg-[#F0F0F0] mx-auto my-6 px-4 sm:px-6 py-4 rounded-md w-[90%] text-center">
+            <div className="grid grid-cols-4 bg-[#F0F0F0] mx-auto mb-6 px-4 sm:px-6 py-4 rounded-md w-[90%] text-center">
                 {PAGE.map((page) => (
                     <p onClick={() => setPage(page)} key={page} className={`${page === newPage ? "font-semibold text-primaryGreen" : ""} capitalize cursor-pointer`}>{page}</p>
                 ))}
@@ -78,16 +80,22 @@ const Exchange = () => {
             <div className="flex flex-col gap-y-1 bg-[#F0F0F0] mx-auto px-4 sm:px-6 py-4 rounded-md w-[90%]">
                 <p className="text-gray-400 text-xs sm:text-sm">You send</p>
                 <div className="flex justify-between items-center">
-                    <p className="font-semibold text-xl sm:text-2xl">MBSC</p>
+                    <div className="flex items-center gap-x-1">
+                        <Image src={mbsc} alt="logo" className="size-7" />
+                        <p className="font-semibold text-xl sm:text-2xl">MBSC</p>
+                    </div>
                     <p className="font-semibold text-xl sm:text-2xl">0.0</p>
                 </div>
                 <p className="text-gray-400 text-xs sm:text-sm">Minereum MNEB</p>
             </div>
-            <ArrowSwapVertical size={18} className="z-[2] relative bg-white mx-auto -mt-4 p-2 border border-gray-200 rounded-[50%] size-fit" />
-            <div className="flex flex-col gap-y-1 bg-[#F0F0F0] mx-auto -mt-4 px-4 sm:px-6 py-4 rounded-md w-[90%]">
+            <ArrowSwapVertical size={18} className="bg-white mx-auto -mt-4 p-2 border border-gray-200 rounded-[50%] size-fit" />
+            <div className="-z-[2] relative flex flex-col gap-y-1 bg-[#F0F0F0] mx-auto -mt-4 px-4 sm:px-6 py-4 rounded-md w-[90%]">
                 <p className="text-gray-400 text-xs sm:text-sm">You get</p>
                 <div className="flex justify-between items-center">
-                    <p className="font-semibold text-xl sm:text-2xl">BNB</p>
+                    <div className="flex items-center gap-x-1">
+                        <Image src={bnb} alt="logo" className="size-7" />
+                        <p className="font-semibold text-xl sm:text-2xl">BNB</p>
+                    </div>
                     <p className="font-semibold text-xl sm:text-2xl">0.0</p>
                 </div>
                 <p className="text-gray-400 text-xs sm:text-sm">Binance coin (BSC)</p>
@@ -114,6 +122,7 @@ const Exchange = () => {
                         {infoOpen && <p className="bg-gray-300 p-2 rounded-lg text-xs sm:text-sm">{option === "v1" ? v1Text : v2Text}</p>}
                     </div>
                     <h1 className="mt-4 font-semibold sm:text-sm text-xl">Wallet Address</h1>
+                    <input type="text" placeholder="Enter Your Wallet Address" className="bg-inherit mt-4 px-2 xl:px-4 py-3 border border-[#716A7C] focus:border-0 rounded-lg focus:outline focus:outline-primaryGreen w-full placeholder:text-[#A7A1AF] duration-300" />
                     <div className="flex gap-x-2 mt-4">
                         <InfoCircle onClick={toggleInfo} size={24} className="text-red-600 cursor-pointer shrink-0" variant="Bold" />
                         <p className="text-xs sm:text-sm">The rates can change at any point due to market conditions, so you might receive more or less cryptocurrency than expected.</p>
@@ -122,7 +131,7 @@ const Exchange = () => {
                         <input type="checkbox" name="check" id="check" onChange={(event) => setField("isChecked", event.target.checked)} className="size-5" checked={isChecked} />
                         <label htmlFor="check" className="cursor-pointer">I agree to the Terms of Use, Privacy Policy.</label>
                     </div>
-                    <button onClick={() => router.push("/payment")} disabled={!isChecked && !isCorrect} className={`${isChecked && isCorrect ? "bg-primaryGreen hover:bg-darkGreen duration-300 hover:text-white" : "bg-green-300"} mt-4 font-medium disabled:cursor-not-allowed w-full py-3 rounded-3xl`}>Next Step</button>
+                    <button onClick={() => router.push("/payment")} disabled={!isChecked || !isCorrect} className={`${isChecked && isCorrect ? "bg-primaryGreen hover:bg-darkGreen duration-300 hover:text-white" : "bg-green-300 text-gray-600"} mt-4 font-medium disabled:cursor-not-allowed w-full py-3 rounded-3xl`}>Next Step</button>
                 </section>
             </div>
         </main>
