@@ -12,7 +12,7 @@ const page = () => {
   return (
     <main>
       <Header />
-      <div className="top-0 z-[2] fixed mt-[4.65rem] w-full">
+      <div className="top-0 z-[2] fixed mt-[3.5rem] w-full">
         <CryptoWidget />
       </div>
       <div className="mt-[10rem]">
