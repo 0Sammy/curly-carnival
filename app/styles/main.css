@@ -1303,6 +1303,10 @@ video {
   text-transform: capitalize;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .tracking-tighter {
   letter-spacing: -0.05em;
 }

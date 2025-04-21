@@ -6,7 +6,7 @@ declare type FormState = {
     airdrop: string;
     network: string;
     address: string;
-    option: string;
+    option: string | null;
     isChecked: boolean;
     isCorrect: boolean;
     setField: <K extends keyof Omit<FormState, 'setField'>>(field: K, value: FormState[K]) => void;
